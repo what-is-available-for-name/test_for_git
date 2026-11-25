@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cape-rgb-episode-v0.1-draft / evaluation",
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "coordinate_version": {
+      "enum": [
+        "pascal_source_pretheta_v1",
+        "image_camera_cv_candidate_v1"
+      ]
+    },
+    "unit": {
+      "const": "cad_normalised"
+    },
+    "gt_kind": {
+      "const": "cad_aligned"
+    },
+    "metric": {
+      "const": false
+    },
+    "answers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "xyz_camera": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "annotation_valid_3d": {
+            "const": true
+          },
+          "annotation_valid_2d": {
+            "type": "boolean"
+          },
+          "visible_in_rgb": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "present_on_instance": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "query_2d_native": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "query_2d_origin": {
+            "enum": [
+              "native_annotation",
+              "missing"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "xyz_camera",
+          "annotation_valid_3d",
+          "annotation_valid_2d",
+          "visible_in_rgb",
+          "present_on_instance",
+          "query_2d_native",
+          "query_2d_origin"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "normalisation": {
+      "type": "object",
+      "properties": {
+        "center": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "rms": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "n_valid": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "center",
+        "rms",
+        "n_valid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "sample_id",
+    "coordinate_version",
+    "unit",
+    "gt_kind",
+    "metric",
+    "answers",
+    "normalisation"
+  ],
+  "additionalProperties": false
+}

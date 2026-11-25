@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cape-rgb-episode-v0.1-draft / split",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "frozen": {
+      "type": "boolean"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "frozen",
+    "members"
+  ],
+  "additionalProperties": false
+}

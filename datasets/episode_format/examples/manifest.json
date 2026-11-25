@@ -1,0 +1,26 @@
+{
+  "dataset": "SYNTHETIC-FORMAT-EXAMPLE",
+  "version": "example-only",
+  "status": "synthetic fixture, not research data",
+  "n_samples": 1,
+  "coordinate_versions": [
+    "pascal_source_pretheta_v1",
+    "image_camera_cv_candidate_v1"
+  ],
+  "provisional_defaults": {
+    "coordinate": "image_camera_cv_candidate_v1",
+    "budget": "gt_box_crop"
+  },
+  "samples": [
+    {
+      "sample_id": "example_001",
+      "side": "A",
+      "class": "synthetic",
+      "k": 5,
+      "agent_review_status": "not_applicable_synthetic"
+    }
+  ],
+  "counts": {
+    "screened": 1
+  }
+}

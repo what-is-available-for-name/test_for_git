@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cape-rgb-episode-v0.1-draft / archive_input",
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "u": {
+                "type": "number"
+              },
+              "v": {
+                "type": "number"
+              },
+              "visible": {
+                "const": true
+              },
+              "raw_status": {
+                "const": 1
+              }
+            },
+            "required": [
+              "id",
+              "u",
+              "v",
+              "visible",
+              "raw_status"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "image",
+        "size",
+        "points"
+      ],
+      "additionalProperties": false
+    },
+    "query": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "image",
+        "size"
+      ],
+      "additionalProperties": false
+    },
+    "budget": {
+      "const": "gt_box_crop"
+    },
+    "budget_declaration": {
+      "type": "object",
+      "properties": {
+        "uses_gt_bbox": {
+          "const": true
+        },
+        "rotation": {
+          "const": false
+        },
+        "crop": {
+          "type": "object",
+          "properties": {
+            "box_float": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "size": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "scale_x": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "scale_y": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "rounding": {
+              "type": "string"
+            },
+            "query_crop": {
+              "type": "object",
+              "properties": {
+                "box_float": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "size": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "scale_x": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "scale_y": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "rounding": {
+                  "type": "string"
+                },
+                "resample": {
+                  "const": "PIL BILINEAR (not cv2.warpAffine)"
+                }
+              },
+              "required": [
+                "box_float",
+                "size",
+                "scale_x",
+                "scale_y",
+                "rounding"
+              ],
+              "additionalProperties": false
+            },
+            "resample": {
+              "const": "PIL BILINEAR (not cv2.warpAffine)"
+            }
+          },
+          "required": [
+            "box_float",
+            "size",
+            "scale_x",
+            "scale_y",
+            "rounding",
+            "query_crop"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "uses_gt_bbox",
+        "rotation",
+        "crop"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "sample_id",
+    "support",
+    "query",
+    "budget",
+    "budget_declaration"
+  ],
+  "additionalProperties": false
+}

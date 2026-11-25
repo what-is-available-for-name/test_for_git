@@ -1,0 +1,89 @@
+{
+  "sample_id": "example_001",
+  "budget": "gt_box_crop",
+  "support": {
+    "image": "images/example_001_support.png",
+    "size": [
+      256,
+      256
+    ],
+    "points": [
+      {
+        "id": 1,
+        "u": 60,
+        "v": 60,
+        "visible": true,
+        "raw_status": 1
+      },
+      {
+        "id": 2,
+        "u": 190,
+        "v": 60,
+        "visible": true,
+        "raw_status": 1
+      },
+      {
+        "id": 3,
+        "u": 190,
+        "v": 190,
+        "visible": true,
+        "raw_status": 1
+      },
+      {
+        "id": 4,
+        "u": 60,
+        "v": 190,
+        "visible": true,
+        "raw_status": 1
+      },
+      {
+        "id": 5,
+        "u": 128,
+        "v": 128,
+        "visible": true,
+        "raw_status": 1
+      }
+    ]
+  },
+  "query": {
+    "image": "images/example_001_query.png",
+    "size": [
+      256,
+      256
+    ]
+  },
+  "budget_declaration": {
+    "uses_gt_bbox": true,
+    "rotation": false,
+    "crop": {
+      "box_float": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "scale_x": 1.0,
+      "scale_y": 1.0,
+      "rounding": "none: float EXTENT box",
+      "query_crop": {
+        "box_float": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "size": [
+          256,
+          256
+        ],
+        "scale_x": 1.0,
+        "scale_y": 1.0,
+        "rounding": "none: float EXTENT box"
+      }
+    }
+  }
+}

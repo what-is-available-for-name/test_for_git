@@ -1,0 +1,47 @@
+{
+  "sample_id": "example_001",
+  "coordinate_version": "image_camera_cv_candidate_v1",
+  "unit": "cad_normalised",
+  "points": [
+    {
+      "id": 1,
+      "xyz": [
+        -1.0,
+        -1.0,
+        5.0
+      ]
+    },
+    {
+      "id": 2,
+      "xyz": [
+        1.0,
+        -1.0,
+        5.0
+      ]
+    },
+    {
+      "id": 3,
+      "xyz": [
+        1.0,
+        1.0,
+        5.0
+      ]
+    },
+    {
+      "id": 4,
+      "xyz": [
+        -1.0,
+        1.0,
+        5.0
+      ]
+    },
+    {
+      "id": 5,
+      "xyz": [
+        0.0,
+        0.0,
+        6.0
+      ]
+    }
+  ]
+}

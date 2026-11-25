@@ -1,0 +1,100 @@
+{
+  "sample_id": "example_001",
+  "coordinate_version": "pascal_source_pretheta_v1",
+  "unit": "cad_normalised",
+  "gt_kind": "cad_aligned",
+  "metric": false,
+  "answers": [
+    {
+      "id": 1,
+      "xyz_camera": [
+        -0.663933,
+        1.248676,
+        -5.0
+      ],
+      "annotation_valid_3d": true,
+      "annotation_valid_2d": true,
+      "visible_in_rgb": null,
+      "present_on_instance": null,
+      "query_2d_native": [
+        62,
+        63
+      ],
+      "query_2d_origin": "native_annotation"
+    },
+    {
+      "id": 2,
+      "xyz_camera": [
+        1.248676,
+        0.663933,
+        -5.0
+      ],
+      "annotation_valid_3d": true,
+      "annotation_valid_2d": true,
+      "visible_in_rgb": null,
+      "present_on_instance": null,
+      "query_2d_native": [
+        192,
+        63
+      ],
+      "query_2d_origin": "native_annotation"
+    },
+    {
+      "id": 3,
+      "xyz_camera": [
+        0.663933,
+        -1.248676,
+        -5.0
+      ],
+      "annotation_valid_3d": true,
+      "annotation_valid_2d": true,
+      "visible_in_rgb": null,
+      "present_on_instance": null,
+      "query_2d_native": [
+        192,
+        193
+      ],
+      "query_2d_origin": "native_annotation"
+    },
+    {
+      "id": 4,
+      "xyz_camera": [
+        -1.248676,
+        -0.663933,
+        -5.0
+      ],
+      "annotation_valid_3d": true,
+      "annotation_valid_2d": true,
+      "visible_in_rgb": null,
+      "present_on_instance": null,
+      "query_2d_native": [
+        62,
+        193
+      ],
+      "query_2d_origin": "native_annotation"
+    },
+    {
+      "id": 5,
+      "xyz_camera": [
+        0.0,
+        -0.0,
+        -6.0
+      ],
+      "annotation_valid_3d": true,
+      "annotation_valid_2d": false,
+      "visible_in_rgb": null,
+      "present_on_instance": null,
+      "query_2d_native": null,
+      "query_2d_origin": "missing"
+    }
+  ],
+  "normalisation": {
+    "center": [
+      0.0,
+      0.0,
+      -5.2
+    ],
+    "rms": 1.3266495487399828,
+    "n_valid": 5
+  }
+}
